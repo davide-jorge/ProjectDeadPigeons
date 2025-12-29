@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var appOptions = builder.Services.AddAppOptions(builder.Configuration);
 
-Console.WriteLine(JsonSerializer.Serialize(appOptions));
+Console.WriteLine("App Options: " + JsonSerializer.Serialize(appOptions));
 
 builder.Services.AddDbContext<MyDbContext>(options =>
 {
