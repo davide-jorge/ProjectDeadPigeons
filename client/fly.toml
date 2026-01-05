@@ -1,0 +1,23 @@
+# fly.toml app configuration file generated for dead-pigeons-client on 2026-01-05T14:55:13+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'dead-pigeons-client'
+primary_region = 'fra'
+
+[build]
+  dockerfile = './Dockerfile'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '256mb'
+  cpus = 1
+  memory_mb = 256
